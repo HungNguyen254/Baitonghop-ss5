@@ -14,5 +14,5 @@ case when total_amount > 4000000 then 'nguy hiểm'
 else 'Bình thường'
 end as alert
 from orders where total_amount between 2000000 and 5000000 AND status != 'CANCELLED'
-limit 3
-offset 3;
+limit 20
+offset 40;
