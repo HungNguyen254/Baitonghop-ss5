@@ -42,3 +42,9 @@ else 'Bình thường'
 end as Alert_level
 from orders;
 select * from orders order by total_amount desc limit 5 offset 10;
+-- gộp vào một câu lệnh
+select *,
+case when total_amount > 4000000 then 'Nguy hiểm'
+else 'Bình thường'
+end as Alert_level
+from orders where total_amount between 2000000 and 5000000 and status !='CANCELLED' AND note like ('%gấp%') or user_id is null order by total_amount desc limit 5 offset 10;
